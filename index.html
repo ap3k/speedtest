@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
-<title>HTML5 Speedtest</title>
+<title>TooMuchWifi Speedtest</title>
 <link rel="shortcut icon" href="favicon.ico">
 <script type="text/javascript" src="speedtest.js"></script>
 <script type="text/javascript">
@@ -50,22 +50,22 @@ function I(id){return document.getElementById(id);}
 <style type="text/css">
 	html,body{
 		border:none; padding:0; margin:0;
-		background:#FFFFFF;
-		color:#202020;
+		background:#000000;
+		color:#FFFFFF;
 	}
 	body{
 		text-align:center;
 		font-family:"Roboto",sans-serif;
 	}
 	h1{
-		color:#404040;
+		color:#FFFFFF;
 	}
 	#startStopBtn{
 		display:inline-block;
 		margin:0 auto;
-		color:#6060AA;
+		color:#00A652;
 		background-color:rgba(0,0,0,0);
-		border:0.15em solid #6060FF;
+		border:0.15em solid #00A652;
 		border-radius:0.3em;
 		transition:all 0.3s;
 		box-sizing:border-box;
@@ -73,14 +73,15 @@ function I(id){return document.getElementById(id);}
 		line-height:2.7em;
 		cursor:pointer;
 		box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
+		font-weight: 600;
 	}
 	#startStopBtn:hover{
 		box-shadow: 0 0 2em rgba(0,0,0,0.1), inset 0 0 1em rgba(0,0,0,0.1);
 	}
 	#startStopBtn.running{
-		background-color:#FF3030;
-		border-color:#FF6060;
-		color:#FFFFFF;
+		border-color:#ED1B24;
+		color:#ED1B24;
+		font-weight: 600;
 	}
 	#startStopBtn:before{
 		content:"Start";
@@ -114,16 +115,19 @@ function I(id){return document.getElementById(id);}
 		z-index:9;
 	}
 	#dlText{
-		color:#6060AA;
+		color:#00A652;
+		font-weight: 600;
 	}
 	#ulText{
-		color:#309030;
+		color:#00ACDC;
+		font-weight: 600;
 	}
 	#pingText,#jitText{
-		color:#AA6060;
+		color:#ED1B24;
+		font-weight: 600;
 	}
 	div.meterText:empty:before{
-		color:#505050 !important;
+		color:#FFFFFF !important;
 		content:"0.00";
 	}
 	div.unit{
@@ -153,7 +157,8 @@ function I(id){return document.getElementById(id);}
 </style>
 </head>
 <body>
-<h1>HTML5 Speedtest</h1>
+<img src="https://portal.toomuchwifi.co.za/static/img/tmw_rainbow_trans.png" style="width:100px; padding-top:1em; padding-left:1em;" alt="toomuchwifi logo">
+<h1>TooMuchWifi Speedtest</h1>
 <div id="startStopBtn" onclick="startStop()"></div>
 <div id="test">
 	<div class="testGroup">
@@ -184,7 +189,6 @@ function I(id){return document.getElementById(id);}
 		IP Address: <span id="ip"></span>
 	</div>
 </div>
-<a href="https://github.com/adolfintel/speedtest">Source code</a>
 <script type="text/javascript">
     initUI();
 </script>
