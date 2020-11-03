@@ -19,31 +19,21 @@
             I("jitText").textContent = data.jitterStatus;
         };
 
-        function failure() {
-            I("node-name").textContent = "Not on TooMuchWifi";
-        }
-
         function ping() {
             var ping = new XMLHttpRequest;
             ping.open('get', '//hotspot.toomuchwifi.co.za/node.html');
             ping.onload = function (e) {
                 if (e.target.status !== 200) {
-                    I("node-name").textContent = "Not on TooMuchWifi";
                     return
                 }
                 try {
                     var node = JSON.parse(e.target.responseText);
                 } catch (e) {
-                    I("node-name").textContent = "Not on TooMuchWifi";
                     return
                 }
-
                 I("node-name").textContent = node.identity;
 
             };
-            ping.onabort = failure;
-            ping.ontimeout = failure;
-            ping.onerror = failure;
             ping.send();
         }
 
